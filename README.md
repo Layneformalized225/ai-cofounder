@@ -151,16 +151,26 @@ ai-cofounder/
 
 ### Tools (8 skills, optional)
 
+These skills connect the agent to external services. 7 of them need [mcporter](https://github.com/steipete/mcporter), a CLI bridge that lets AI agents call MCP servers. Without it, the skills will install but won't be able to reach PostHog or Exa APIs.
+
+```bash
+# One-time setup
+npm install -g mcporter
+# Then configure your API keys — see docs/adding-tools.md
+```
+
 | Skill | What it does | Requires |
 |-------|-------------|----------|
-| `posthog-analytics` | Query PostHog data | PostHog + mcporter |
-| `exa-company-research` | Research companies via Exa | Exa API + mcporter |
-| `exa-people-research` | Research people and LinkedIn profiles | Exa API + mcporter |
-| `exa-personal-site` | Find personal sites and blogs | Exa API + mcporter |
-| `exa-x-search` | Search X/Twitter posts | Exa API + mcporter |
-| `exa-code-search` | Search code repositories | Exa API + mcporter |
-| `exa-lead-gen` | Deep search for lead generation | Exa API + mcporter |
-| `web-browser` | Browse web pages via agent-browser | agent-browser CLI |
+| `posthog-analytics` | Query PostHog data | PostHog account + mcporter |
+| `exa-company-research` | Research companies via Exa | Exa API key + mcporter |
+| `exa-people-research` | Research people and LinkedIn profiles | Exa API key + mcporter |
+| `exa-personal-site` | Find personal sites and blogs | Exa API key + mcporter |
+| `exa-x-search` | Search X/Twitter posts | Exa API key + mcporter |
+| `exa-code-search` | Search code repositories | Exa API key + mcporter |
+| `exa-lead-gen` | Deep search for lead generation | Exa API key + mcporter |
+| `web-browser` | Browse web pages via agent-browser | [agent-browser](https://github.com/nichochar/agent-browser) CLI |
+
+The other 40 skills work out of the box with no external dependencies.
 
 </details>
 
